@@ -1,26 +1,15 @@
 import { Link, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import Students from './pages/Students.jsx';
 
 function PagePlaceholder({ title, description }) {
   return (
-    <main className="page-shell">
-      <p className="eyebrow">Student Management System</p>
+    <main className="placeholder-page">
+      <p className="eyebrow">StudentMS</p>
       <h1>{title}</h1>
       <p>{description}</p>
-      <Link className="back-link" to="/">Return to dashboard foundation</Link>
-    </main>
-  );
-}
-
-function Dashboard() {
-  return (
-    <main className="page-shell">
-      <p className="eyebrow">Student Management System</p>
-      <h1>Dashboard foundation</h1>
-      <p>Phase 1 routing is ready. Student management screens will be added in a later phase.</p>
-      <nav aria-label="Application routes">
-        <Link to="/students">Student list placeholder</Link>
-        <Link to="/students/new">Add student placeholder</Link>
-      </nav>
+      <Link className="button secondary-button" to="/">Return to dashboard</Link>
     </main>
   );
 }
@@ -28,11 +17,13 @@ function Dashboard() {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/students" element={<PagePlaceholder title="Student list" description="The student list will be implemented in a later phase." />} />
-      <Route path="/students/new" element={<PagePlaceholder title="Add student" description="The add-student form will be implemented in a later phase." />} />
-      <Route path="/students/:id" element={<PagePlaceholder title="Student details" description="Student details will be implemented in a later phase." />} />
-      <Route path="/students/:id/edit" element={<PagePlaceholder title="Edit student" description="The edit-student form will be implemented in a later phase." />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/students/new" element={<PagePlaceholder title="Add Student" description="The student form will be available in a later phase." />} />
+        <Route path="/students/:id" element={<PagePlaceholder title="Student Details" description="Student details will be available in a later phase." />} />
+        <Route path="/students/:id/edit" element={<PagePlaceholder title="Edit Student" description="Student editing will be available in a later phase." />} />
+      </Route>
     </Routes>
   );
 }
