@@ -128,3 +128,58 @@ td { padding: 15px 20px; border-top: 1px solid #f1f5f9; color: #475569; font-siz
   .mobile-student-card dd { margin: 0; color: #334155; font-size: 0.76rem; text-align: right; overflow-wrap: anywhere; }
   .mobile-student-card .row-actions { padding-top: 12px; border-top: 1px solid #f1f5f9; }
 }
+
+.narrow-content { max-width: 900px; }
+.form-page-header { align-items: center; }
+.form-panel { max-width: 900px; }
+.student-form { width: 100%; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.full-field { grid-column: 1 / -1; }
+.field-group { display: grid; gap: 7px; }
+.field-group label { color: #334155; font-size: 0.78rem; font-weight: 750; }
+.field-group input, .field-group select { width: 100%; min-height: 44px; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; padding: 0 12px; background: #fff; color: #0f172a; font-size: 0.84rem; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.field-group input:focus, .field-group select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px #dbeafe; }
+.field-group input[aria-invalid="true"], .field-group select[aria-invalid="true"] { border-color: #dc2626; }
+.field-error { color: #dc2626; font-size: 0.73rem; }
+.form-actions, .details-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 28px; padding-top: 22px; border-top: 1px solid #e2e8f0; }
+.form-error-banner { margin-bottom: 20px; border: 1px solid #fecaca; border-radius: 8px; padding: 12px 14px; background: #fef2f2; color: #b91c1c; font-size: 0.8rem; }
+.loading-panel { margin-top: 10px; }
+.error-panel { margin-top: 10px; }
+.centered-state { min-height: 320px; text-align: center; }
+.centered-state h2 { margin-bottom: 6px; color: #172554; font-size: 1.1rem; }
+.centered-state p { margin-bottom: 20px; color: #64748b; font-size: 0.82rem; }
+.details-panel { padding: 28px; }
+.details-hero { display: flex; align-items: center; gap: 16px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0; }
+.large-avatar { width: 58px; height: 58px; display: inline-grid; place-items: center; border-radius: 16px; background: #dbeafe; color: #1d4ed8; font-size: 1.15rem; font-weight: 800; }
+.details-hero h2 { margin: 0 0 4px; color: #172554; font-size: 1.3rem; }
+.details-hero p { margin: 0; color: #64748b; font-size: 0.82rem; }
+.details-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+.details-grid > div { display: grid; gap: 5px; padding: 20px 0; border-bottom: 1px solid #f1f5f9; }
+.details-grid > div:nth-child(odd) { margin-right: 28px; }
+.detail-label { color: #64748b; font-size: 0.72rem; font-weight: 700; }
+.details-grid strong { color: #334155; font-size: 0.84rem; font-weight: 650; overflow-wrap: anywhere; }
+.danger-outline-button { border: 1px solid #fecaca; background: #fff; color: #dc2626; }
+.danger-outline-button:hover { background: #fef2f2; }
+.danger-button { background: #dc2626; color: #fff; }
+.danger-button:hover { background: #b91c1c; }
+.dialog-backdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; background: rgba(15, 23, 42, 0.48); }
+.confirm-dialog { width: min(100%, 430px); border-radius: 12px; padding: 28px; background: #fff; box-shadow: 0 18px 50px rgba(15, 23, 42, 0.22); }
+.dialog-icon { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 15px; border-radius: 50%; background: #fee2e2; color: #dc2626; font-size: 1.25rem; font-weight: 800; }
+.confirm-dialog h2 { margin-bottom: 8px; color: #172554; font-size: 1.15rem; }
+.confirm-dialog p { margin-bottom: 0; color: #64748b; font-size: 0.84rem; line-height: 1.6; }
+.confirm-dialog p strong { color: #334155; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+
+@media (max-width: 620px) {
+  .form-page-header { align-items: flex-start; }
+  .form-page-header .text-link { margin-top: 0; }
+  .form-grid, .details-grid { grid-template-columns: 1fr; gap: 16px; }
+  .full-field { grid-column: auto; }
+  .details-grid > div:nth-child(odd) { margin-right: 0; }
+  .details-panel { padding: 20px; }
+  .details-actions, .form-actions { align-items: stretch; flex-direction: column-reverse; }
+  .details-actions .button, .form-actions .button { width: 100%; }
+  .confirm-dialog { padding: 22px; }
+  .dialog-actions { align-items: stretch; flex-direction: column-reverse; }
+  .dialog-actions .button { width: 100%; }
+}

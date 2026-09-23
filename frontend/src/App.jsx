@@ -1,7 +1,10 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
+import AddStudent from './pages/AddStudent.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import EditStudent from './pages/EditStudent.jsx';
 import Students from './pages/Students.jsx';
+import StudentDetails from './pages/StudentDetails.jsx';
 
 function PagePlaceholder({ title, description }) {
   return (
@@ -20,9 +23,9 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/students" element={<Students />} />
-        <Route path="/students/new" element={<PagePlaceholder title="Add Student" description="The student form will be available in a later phase." />} />
-        <Route path="/students/:id" element={<PagePlaceholder title="Student Details" description="Student details will be available in a later phase." />} />
-        <Route path="/students/:id/edit" element={<PagePlaceholder title="Edit Student" description="Student editing will be available in a later phase." />} />
+        <Route path="/students/new" element={<AddStudent />} />
+        <Route path="/students/:id" element={<StudentDetails />} />
+        <Route path="/students/:id/edit" element={<EditStudent />} />
       </Route>
     </Routes>
   );
